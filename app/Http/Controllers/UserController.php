@@ -21,15 +21,7 @@ class UserController extends Controller
     }
     public function dashIndex()
     {
-        // if (Auth::id()) {
-        //     $role = Auth()->user()->role;}
-        //         if ($role == 'admin') {
-                return view('admin.index');
-            // }
-            // else
-            // {$student = Student::all();
-            // return view('index', compact('student'));}
-
+        return view('admin.index');
     }
 
     
@@ -42,7 +34,7 @@ class UserController extends Controller
     public function store(Request $request)
     {
 
-        // Data Validate
+        
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'max:255'],
@@ -59,7 +51,7 @@ class UserController extends Controller
         User::create([
             'name' => $request->input('name'),
             'email' => $request->input('email'),
-            'password' => Hash::make($request->input('password')), // Hashing the password
+            'password' => Hash::make($request->input('password')), 
             'role' => $request->input('role'),
         ]);
 

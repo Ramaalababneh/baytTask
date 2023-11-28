@@ -31,11 +31,10 @@ class StudentController extends Controller
     public function store(Request $request)
     {
 
-        // Data Validate
         $request->validate([
-            'name' => ['required', 'string', 'max:255'], // Assuming 'name' should be a string with a maximum length of 255 characters.
-            'age' => ['required', 'integer', 'min:1'], // Assuming 'age' should be an integer greater than or equal to 1.
-            'residence_location' => ['required', 'string', 'max:255'], // Assuming 'residence_location' should be a string with a maximum length of 255 characters.
+            'name' => ['required', 'string', 'max:255'], 
+            'age' => ['required', 'integer', 'min:1'], 
+            'residence_location' => ['required', 'string', 'max:255'], 
         ]);
 
         Student::create([
@@ -63,9 +62,9 @@ class StudentController extends Controller
     {
         // Data Validate
         $request->validate([
-            'name' => ['required', 'string', 'max:255'], // Assuming 'name' should be a string with a maximum length of 255 characters.
-            'age' => ['required', 'integer', 'min:1'], // Assuming 'age' should be an integer greater than or equal to 1.
-            'residence_location' => ['required', 'string', 'max:255'], // Assuming 'residence_location' should be a string with a maximum length of 255 characters.
+            'name' => ['required', 'string', 'max:255'], 
+            'age' => ['required', 'integer', 'min:1'], 
+            'residence_location' => ['required', 'string', 'max:255'],
         ]);
 
         $data = $request->except(['_token', '_method']);
